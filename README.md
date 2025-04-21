@@ -84,7 +84,7 @@ CREATE TABLE Clerk(
 
 ![image](https://github.com/user-attachments/assets/af2e45c7-8ec3-4624-83c7-41847e75a0bf)
 
-Conclusion 
+### Conclusion 
 
 The output that I got is a full list of 10 clerks showing their names, ages, emails, job positions, salaries, and contact details. I noticed that the clerk with the highest salary is David Taylor, who works as a Hospital Administrator earning 75,000, while the lowest salary is 48,000 shared by Emma Johnson and Daniel Anderson. When I compared the genders, I saw that there are more male clerks (5) than female clerks (5), showing an equal balance. I also realized that different job positions like Pharmacist and IT Support Specialist have similar salaries (60,000), while higher roles like Hospital Administrator earn more, which helps me understand how roles affect salary.
 
@@ -108,6 +108,7 @@ CREATE TABLE Customer(
 ![image](https://github.com/user-attachments/assets/b77c3d7f-92b0-49cd-8c14-b96192c66c44)
 
 ### Conclusion
+
 The output that I got is a list of 10 customers with their personal details like name, age, gender, nationality, and contact information. I noticed that **more male customers (5) are from Canada and Australia**, while **most female customers (3 out of 5) are from the USA and UK**. When I compared the ages, I saw that **the oldest person is 45 years old** and **the youngest is 25**, which shows that the hotel serves both younger and older people. This helped me understand how I can use SQL to **compare data, find patterns, and make useful observations** just by running a simple query.
 
 ### Room Table
@@ -178,8 +179,6 @@ CREATE TABLE Guest(
 
 ![image](https://github.com/user-attachments/assets/4af97769-3e9e-4c3b-bcbb-657581bd8fd1)
 
-Conclusion 
-
 **Conclusions**
 
 The output that I got is a list of 10 hotel guests with their names, ages, nationalities, and any special requests they made when booking. I noticed that **more male guests (5)** requested things like vegetarian meals or early check-out, while **female guests (5)** asked for things like extra towels or a quiet room. When I compared the ages, **the oldest guest was 36** and **the youngest was 26**, which shows that the hotel serves adults of all ages. I also saw that **USA and Canada had the most guests**, which helped me understand where most visitors are from and what kinds of requests are more popular depending on gender or nationality.
@@ -220,7 +219,7 @@ CREATE TABLE Facility(
 
 ![image](https://github.com/user-attachments/assets/8f2ac3ae-425b-476d-a97e-18b2054e2812)
 
-Conclusion
+### Conclusion
 
 The output that I got is a list of different facilities in a building, showing their names, descriptions, how many people each can hold, where they are located, and their room numbers. I noticed that the **Banquet Hall** has the highest capacity of **100 people**, while the **Spa & Wellness Center** can only hold **10 people**, which is the smallest. This means the Banquet Hall is **10 times bigger** in capacity than the Spa. I also saw that **two facilities** are on the **Ground Floor** (Fitness Center and Banquet Hall), and **two are on Floor 2** (Conference Room A and Game Room), so I can compare locations as well.
 
@@ -399,7 +398,7 @@ WHERE Guest_special_requests IS NOT NULL;
 
 ---
 
-**Q: What was one challenge you faced while working on this project?**  
+**Q11: What was one challenge you faced while working on this project?**  
 **I** struggled a little when I saw that some reviews didn’t have a booking ID, and that caused an error when I tried to re-insert new reviews. I fixed it by deleting the old ones with no booking, but it helped me learn why every review needs to connect to a real booking. I also realized how important it is to check for duplicates before inserting data. This experience taught me that **even small mistakes in a database can break a lot of things**.
 ---
 
@@ -408,9 +407,10 @@ WHERE Guest_special_requests IS NOT NULL;
 ### Step 5: I Drew an ER Diagram
 
 This is the map that shows how all the tables are connected together:
+
 ![ER Diagram](https://github.com/AuntBawHein/Hotel_Reservation_Management_System_SQL/assets/150255399/21d27e9f-bb00-47d7-9a86-b9a36a8b6a93)
 
-Conclusion
+### Conclusion
 
 I built a hotel reservation system using SQL and connected all the important parts like Customer, Booking, Room, and Payment. When I looked at my ER diagram, I saw that the Booking table is the most connected because it links with more tables than any other one. I noticed that the Room table is shared by both Booking and Facility, but the Facility table is only connected to Room, which means it is less important in the system. This helped me understand that Booking is the main center of the system, while tables like Review and Feedback are more like extra parts that give more details but aren’t connected to many others.
 
@@ -420,7 +420,9 @@ I built a hotel reservation system using SQL and connected all the important par
 ### Step 6: I Wrote a Report
 
 I also created a document to explain my project:
+
 [Hospital_management_system_project_words_sql.docx](https://github.com/user-attachments/files/19833239/Hospital_management_system_project_words_sql.docx)
+
 (https://github.com/AuntBawHein/Hotel_Reservation_Management_System_SQL/files/14392013/hotel_reservation_system_words_project_sql.docx)
 
 ---

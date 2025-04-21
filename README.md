@@ -281,6 +281,7 @@ I added:
 ---
 
 ### Q1: **How did you know who booked a room and whether they paid or not?**  
+
 **I** used SQL `JOINs` to connect the **Customer**, **Room**, and **Payment** tables. This helped me see not just who booked what room, but also if they paid for it. The `LEFT JOIN` was really helpful to still show unpaid bookings.
 
 ```sql
@@ -294,6 +295,7 @@ LEFT JOIN Payment ON Booking.Bk_id = Payment.Booking_id;
 ---
 
 ### Q2: **How did you find only the customers who completed their payment?**  
+
 **I** filtered out only the bookings where the payment status says `'Successful'`. This way, I was only showing customers who actually paid.
 
 ```sql
@@ -308,6 +310,7 @@ WHERE Payment.Payment_status = 'Successful';
 ---
 
 ### Q3: **Can you show which guests stayed in which room?**  
+
 Yes! **I** linked the **Room**, **Booking**, and **Guest** tables so I could track down exactly which guest stayed in which room. This makes it easier for staff to personalize their service.
 
 ```sql
@@ -320,6 +323,7 @@ JOIN Guest ON Booking.Bk_id = Guest.Booking_id;
 ---
 
 ### Q4: **How did you find out how many bookings each customer made?**  
+
 **I** grouped the bookings by customer and used `COUNT()` to see how often each person booked. This helped me find loyal or repeat customers.
 
 ```sql
@@ -332,6 +336,7 @@ GROUP BY Customer.Cus_firstname;
 ---
 
 ### Q5: **Did you check which rooms were never booked at all?**  
+
 Yes, I did! **I** used a `LEFT JOIN` and filtered out rooms that **don’t appear in the Booking table**. These are rooms that were never used.
 
 ```sql
@@ -344,6 +349,7 @@ WHERE Booking.Room_id IS NULL;
 ---
 
 ### Q6: **How did you know which clerk handled each booking?**  
+
 **I** joined the **Booking** and **Clerk** tables so I could match clerks with the bookings they helped with. This is useful for tracking staff performance or assigning responsibility.
 
 ```sql
@@ -355,7 +361,8 @@ JOIN Customer ON Booking.Cus_id = Customer.Cus_id;
 
 ---
 
-### Q7: **How do you show which facilities are available in each room?**  
+### Q7: **How do you show which facilities are available in each room?** 
+
 **I** connected the **Facility** and **Room** tables. This helped me list all the amenities guests can use depending on their room type, like spa, gym, or rooftop.
 
 ```sql
@@ -367,6 +374,7 @@ JOIN Room ON Facility.Room_id = Room.Room_id;
 ---
 
 ### Q8: **How do you see the ratings and comments from guests?**  
+
 **I** just used a simple `SELECT` query from the **Review** table to view all the guest reviews and their ratings. It helped me get an idea of what guests liked or didn’t like.
 
 ```sql
@@ -377,6 +385,7 @@ FROM Review;
 ---
 
 ### Q9: **How did you get feedback from customers and link it to their names?**  
+
 **I** joined the **Feedback** table with the **Customer** table so I could see who said what. It was cool to match comments with actual customers.
 
 ```sql
@@ -388,6 +397,7 @@ JOIN Customer ON Feedback.Cus_id = Customer.Cus_id;
 ---
 
 ### Q10: **Can you find guests who had special requests?**  
+
 Yes. **I** just searched the **Guest** table and looked for any rows where the `Guest_special_requests` field wasn't empty.
 
 ```sql
@@ -399,6 +409,7 @@ WHERE Guest_special_requests IS NOT NULL;
 ---
 
 **Q11: What was one challenge you faced while working on this project?**  
+
 **I** struggled a little when I saw that some reviews didn’t have a booking ID, and that caused an error when I tried to re-insert new reviews. I fixed it by deleting the old ones with no booking, but it helped me learn why every review needs to connect to a real booking. I also realized how important it is to check for duplicates before inserting data. This experience taught me that **even small mistakes in a database can break a lot of things**.
 ---
 
